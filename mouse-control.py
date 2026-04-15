@@ -21,6 +21,19 @@ max_speeds = (
     pyautogui.size().height/10
 )
 
+def onClick( x, y, button, pressed ):
+    global controller
+    if button == mouse.Button.left and pressed:
+        controller.joystick.setRightJoystick( -1, 0 )
+    if button == mouse.Button.left and not pressed:
+        controller.joystick.setRightJoystick( 0, 0 )
+    if button == mouse.Button.right and pressed:
+        controller.joystick.setRightJoystick( 1, 0 )
+    if button == mouse.Button.right and not pressed:
+        controller.joystick.setRightJoystick( 0, 0 )
+
+listener = mouse.Listener( on_click=onClick )
+listener.start()
 
 def constrain( value, min, max ):
     if value < min:
