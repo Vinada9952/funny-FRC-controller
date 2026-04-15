@@ -20,6 +20,8 @@ actions = {
 # You can setup this by loading the minecraft bedrock world and going to positions 536 74 154 in the minecraft world
 # You may have to resetup the colors of each actions, as well as the position of the pixel to check
 
+print( "start" )
+
 while True:
     try:
         color = pyautogui.pixel(*COLOR_CHECK)

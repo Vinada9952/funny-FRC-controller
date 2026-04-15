@@ -25,6 +25,7 @@ Exemple d'utilisation :
 
 from __future__ import annotations
 from typing import Tuple
+import vgamepad as vg
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -363,7 +364,6 @@ class XboxController:
 
     def __init__(self):
         try:
-            import vgamepad as vg
             self._vg = vg
             self._gamepad = vg.VX360Gamepad()
         except ImportError:
